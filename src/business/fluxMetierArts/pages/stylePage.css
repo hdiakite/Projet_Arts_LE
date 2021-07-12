@@ -1,0 +1,150 @@
+.DimentionPage
+{
+    width: 95%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+/*-------------------------------------repérage des éléments-----------------------------*/
+
+.titre1
+{
+
+    height: 30px;
+    width: 5px;
+    text-align:center;
+    background-color:#dddedf ;
+  
+}
+.titre2
+{
+  
+    height: 30px;
+    width: 190px;
+    text-align:center;
+    background-color:#dddedf ;
+}
+
+.titre3
+{
+    height: 30px;
+    width: 170px;
+    text-align:center;
+    background-color:#dddedf ;
+}
+
+.titre4
+{
+    margin-left: 0px;
+    height: 30px;
+    width: 200px;
+    text-align:center;
+    background-color:#dddedf ;
+}
+
+.dimensionFormulaire, .dimensionPage
+{
+    width: 90%;
+    margin-left: 1%;
+}
+
+.label
+{
+    display:inline-block;
+    width:16%;
+    margin-left: 5px;
+}
+
+/*-------------------Program essai (information générale)--------*/
+
+.titreInfoProgramEssai
+{
+    display:inline-block;
+    width:17%;
+    margin-left: 20px;
+    opacity: 0.5;
+    font-weight: bolder;
+    font-weight: 1000;
+    margin-left: 30px;
+    
+}
+
+.titreDureeEstimee
+{
+    width:16%;
+    margin-left: 20px;
+    font-weight: bolder;
+    font-weight: 1000; 
+}
+
+.infoProgramEssai
+{
+   border-color: white;
+}
+
+.ButtonAnuller
+{
+ 
+    width:15%;
+   margin-left: 625px;
+      
+}
+
+.ButtonEnregistrer
+{
+  
+    width:15%;
+    margin-left: 5px;
+}
+/*-------------------Program essai en cours --------*/
+.ButtonTerminer
+{ 
+    width:13%;
+    margin-left: 5px;
+}
+/*-------------------Saisie donnee de mesure --------*/
+.importFichier
+{
+    margin-top: 30px;
+}
+
+.titreInfoMesure
+{
+    display:inline-block;
+    width:19%;
+    margin-left: 20px;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+
+.titreMesure
+{
+    margin-left: 5%;
+    font-family: Orkney;
+    font-size: 20px;
+}
+
+.titreMesure2
+{
+    margin-left: 9%;
+    font-family: Orkney;
+    font-size: 20px;
+
+}
+
+/*-------------------Saisie une ligne de mesure mesure --------*/
+.inputDonneMesure
+{
+    display:inline-block;
+    width:15%;
+    margin-left: 5px;
+
+}
+/*----------------------------------page programme----------------------*/
+.ProgramEssai
+{
+    margin-left: 2%;
+}
+
+/*------------------------------------------choix de catégorie------------------------------------*/
+

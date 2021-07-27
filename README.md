@@ -68,3 +68,47 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+####
+
+
+```jsx
+function App() {
+    const {demandes, fetchDemande} = useFetchDemande();
+
+
+    return (
+        <>
+            <RechercherDemande fetch={fetchDemandes} />
+            <AfficherDemandes demandes={demandes}>
+        </>
+    );
+}
+
+
+function RechercherDemandes({fetchDemandes}) {
+    const [data, setData] = useState('');
+    return (
+        <>
+            <Input value={data} onChange={(value) => setData(value)}>
+            <Button onClick={fetchDemande(data)}>
+        </>
+    )
+}
+
+
+function useFetchDemande() {
+    const [demandes, setDemandes] = useState([]);
+
+    function fetchDemandes(param) {
+        const result = fetch(url + `/demandes?filter=${param}`);
+
+        setDemandes(result);
+    }
+
+    return {demandes, fetchDemandes};
+}
+```

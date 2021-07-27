@@ -1,49 +1,34 @@
 import React from 'react';
 
-import { Table, Space, } from 'antd';
+import { Table, Space } from 'antd';
 
-const columns = [
-    {
-      title: "Numéro d'essai",
-      dataIndex: 'numeroDessai',
-      key: 'numeroDessai',
-      render: text => <a>{text}</a>,
-    },
-    {
-      title: 'Numéro de suivis DDE',
-      dataIndex: 'numeroSuivisDDE',
-      key: 'numeroSuivisDDE',
-    },
-    {
-      title: 'Banc',
-      dataIndex: 'banc',
-      key: 'banc',
-    },
-    {
-      title: 'Action',
-      key: 'action',
-      render: (text, record) => (
-        <Space size="middle">
-          <a>Supprimer</a>
-        </Space>
-      ),
-    },
-  ];
-  
-  const data = [
-    ];
-  
+const { Column } = Table;
+
+const data = [];
 
 const TableauReferecneDDE = () => {
-
-    return (
-             <div  className="">
-            <Table columns={columns} dataSource={data}/>
-            <br/>
-
-            </div>
-           
-    );
-}
+  return (
+    <div className="">
+      <Table dataSource={data} />
+      <Column
+        title="Numéro d'essai"
+        dataIndex="numeroDessai"
+        key="numeroDessai"
+      ></Column>
+      <Column
+        title="Numéro de suivis DDE"
+        dataIndex="numeroSuivisDDE"
+        key="numeroSuivisDDE"
+      ></Column>
+      <Column title="Banc" dataIndex="banc" key="banc"></Column>
+      <Column
+        title="Action"
+        key="action"
+        render={(text, record) => <Space size="middle"></Space>}
+      ></Column>
+      <br />
+    </div>
+  );
+};
 
 export default TableauReferecneDDE;

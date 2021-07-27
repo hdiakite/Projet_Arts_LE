@@ -78,8 +78,8 @@ margin-top: 15px;
 
 .boutonValiderDemandeEsaai
 {
-    margin-left: 85%;
-    margin-top: 10%;
+    margin-left: 80%;
+    margin-top: 1%;
 }
 
 /*-------------------------------------formulaire demande d'essai1--------------------------*/
@@ -121,15 +121,10 @@ margin-top: 15px;
     margin-left: 2%;
 }
 
-.dimensionTableau
-{
-    width: 85%;
-    margin-left: 2%;
-}
 
 .dimensionFormulaireCopieDessai
 {
-    width: 55%;
+    width: 65%;
     margin-left: 2%;
 }
 
@@ -348,5 +343,36 @@ margin-top: 15px;
     font-size: 20px;
     height: 40px;
     
+}
+/* --------------------------Composant Ajout Tecnologie-------------------*/
+.CompsantADroite
+{
+    width: 680px;
+    margin-left: 450px;
+    padding: 12 px;
+    margin-top: px;
+
+}
+.titreNom
+{
+    margin-left: 0px;
+    height: 30px;
+    width: 310px;
+    text-align:center;
+    background-color:#dddedf ;
+}
+.titreDescription
+{
+    margin-left: 0px;
+    height: 30px;
+    width: 320px;
+    text-align:center;
+    background-color:#dddedf ;
+
+}
+
+/*------------------------------Sous menu ajout des élements en base de données--------------*/
+.menuAjoutEnBase
+{
 
 }

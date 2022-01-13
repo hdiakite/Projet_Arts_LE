@@ -26,9 +26,11 @@ const ArtMenu = (props) => {
         selectedKeys={[current]}
         mode="horizontal"
         style={centerStyle}
+        defaultSelectedKeys={['Demande']}
+        defaultOpenKeys={['Demandes']}
       >
         <Menu.Item key="Demandes">
-          <Link to="/MesDemandes" style={{ color: 'white' }}>
+          <Link to="/PageTestRequests" style={{ color: 'white' }}>
             Liste demandes essais
           </Link>
         </Menu.Item>

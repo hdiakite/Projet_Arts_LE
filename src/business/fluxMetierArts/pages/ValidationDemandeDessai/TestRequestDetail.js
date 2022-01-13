@@ -11,6 +11,7 @@ import {
   Typography,
   Space,
   Tag,
+  PageHeader,
 } from 'antd';
 import {
   UploadOutlined,
@@ -24,6 +25,16 @@ const layout = {
 };
 
 const { Title } = Typography;
+const routes = [
+  {
+    path: 'index',
+    breadcrumbName: 'Accueil',
+  },
+  {
+    path: 'demandesEssais',
+    breadcrumbName: 'Demande essais',
+  },
+];
 
 const props = {
   action: '//jsonplaceholder.typicode.com/posts/',
@@ -40,7 +51,7 @@ const props = {
   },
 };
 
-function Formulaire1DemandeVierge() {
+function TestRequestDetail() {
   const onFinish = (values) => {
     console.log('Received values of form:', values);
   };
@@ -59,6 +70,14 @@ function Formulaire1DemandeVierge() {
 
   return (
     <>
+      <div>
+        <PageHeader
+          className="site-page-header"
+          title="Validation d'une demande d'essai"
+          breadcrumb={{ routes }}
+        />
+      </div>
+      ;
       {/* ------------------------------Information generale------------------------------------------------------------------*/}
       <Title className="titreEtapeDemande" level={4}>
         Détail essai numéro{' '}
@@ -357,4 +376,4 @@ function Formulaire1DemandeVierge() {
     </>
   );
 }
-export default Formulaire1DemandeVierge;
+export default TestRequestDetail;

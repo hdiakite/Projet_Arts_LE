@@ -18,7 +18,7 @@ function HeaderLogo() {
             className="logo"
             width={90}
             height={55}
-            src="http://ifnb-web:8080/docs/logo%20jpeg.jpg"
+            src="http://ifnb-web.adcorp.ners:8090/docs/logo%20jpeg.jpg"
           />
         </Header>
       </Layout>

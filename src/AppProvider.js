@@ -10,7 +10,7 @@ const AppContext = createContext({
 export const useAppContext = () => useContext(AppContext);
 
 const AppProvider = ({ children }) => {
-  const [user, setUser] = useState({ role: 'technicien' });
+  const [user, setUser] = useState({ role: 'administrateur' });
 
   return (
     <AppContext.Provider

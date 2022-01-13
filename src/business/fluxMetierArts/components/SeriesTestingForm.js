@@ -19,7 +19,7 @@ const layout = {
 
 const { Title } = Typography;
 
-function Formulaire1DemandeVierge() {
+function SeriesTestingForm() {
   // const onFinish = (values) => {
   //   console.log('Received values of form:', values);
   // };
@@ -232,4 +232,4 @@ function Formulaire1DemandeVierge() {
     </>
   );
 }
-export default Formulaire1DemandeVierge;
+export default SeriesTestingForm;

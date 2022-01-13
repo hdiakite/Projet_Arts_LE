@@ -1,6 +1,6 @@
 import React from 'react';
 import './../../stylePage.css';
-import { Form, Button, Input, Select, Typography } from 'antd';
+import { Form, Button, Input, Typography } from 'antd';
 import SaisieModificationBanc from './saisieModificationBanc';
 
 const { Text } = Typography;
@@ -36,17 +36,24 @@ const ModifierBAnc = () => {
             Choisir
           </Button>
         </Form.Item>
+
+        <br />
+        <div className="titreformulaireMesure">
+          <Text className="titreMesure">{"Numero demande d'essai"}</Text>
+          <Text className="titreMesure2"> Reference DDE</Text>
+          <Text className="titreMesure2">Voie</Text>
+          <Text className="titreMesure2">Banc</Text>
+        </div>
+        <SaisieModificationBanc />
+        <SaisieModificationBanc />
+        <SaisieModificationBanc />
+        <Form.Item className="">
+          <Button type="primary" className="">
+            {' '}
+            Enregistrer
+          </Button>
+        </Form.Item>
       </Form>
-      <br />
-      <div className="titreformulaireMesure">
-        <Text className="titreMesure">{"Numero demande d'essai"}</Text>
-        <Text className="titreMesure2"> Reference DDE</Text>
-        <Text className="titreMesure2">Voie</Text>
-        <Text className="titreMesure2">Banc</Text>
-      </div>
-      <SaisieModificationBanc />
-      <SaisieModificationBanc />
-      <SaisieModificationBanc />
     </div>
   );
 };

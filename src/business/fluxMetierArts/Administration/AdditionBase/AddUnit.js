@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './../../fluxMetierArts/components/style.css';
+import '../../components/style.css';
 import { Form, Input, Button, Typography, Space, Tag } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 
@@ -10,18 +10,17 @@ const layout = {
 
 const { Title } = Typography;
 
-const AjoutTypeBAnc = () => {
+const AddUnit = () => {
   const onFinish = (values) => {
     console.log('Received values of form:', values);
   };
-  const [countSerie, setCountSerie] = useState(1);
+  const [countUnit, setCountUnit] = useState(1);
   const redStart = <em style={{ color: 'red' }}>* </em>;
-
   return (
     <div>
       <Form
         {...layout}
-        id="demande"
+        id="unit"
         className="formulaireDemande1"
         name="dynamic_form_nest_item"
         onFinish={onFinish}
@@ -29,16 +28,16 @@ const AjoutTypeBAnc = () => {
         layout="vertical"
       >
         <Title className="" level={4}>
-          Serie
+          New unit
         </Title>
-        <div className="titreformulaireSerie">
+        <div className="titreformulaireAjoutTechnologie">
           <Tag className="titreSerie1"> #</Tag>
-          <Tag className="titreSerie2">{redStart} Nom</Tag>
-          <Tag className="titreSerie3">{redStart}Description</Tag>
+          <Tag className="titreUnit">{redStart} Nom</Tag>
+          <Tag className="titreUnit">Description</Tag>
         </div>
         <br />
 
-        <Form.List name="series">
+        <Form.List name="unit">
           {(fields, { add, remove }) => (
             <>
               {fields.map(({ key, name, fieldKey, ...restField }, id) => (
@@ -63,24 +62,28 @@ const AjoutTypeBAnc = () => {
                     name={[name, 'description']}
                     fieldKey={[fieldKey, 'description']}
                   >
-                    <Input style={{ width: 330 }} placeholder="" />
+                    <Input.TextArea
+                      style={{ width: 340, marginTop: 10 }}
+                      showCount
+                      maxLength={250}
+                    />
                   </Form.Item>
                   <MinusCircleOutlined
                     onClick={function (event) {
                       remove(name);
-                      setCountSerie(countSerie - 1);
+                      setCountUnit(countUnit - 1);
                     }}
                   />
                 </Space>
               ))}
               <Form.Item>
                 <Button
+                  style={{ width: 750 }}
                   type="dashed"
                   onClick={function (event) {
                     add();
-                    setCountSerie(countSerie + 1);
+                    setCountUnit(countUnit + 1);
                   }}
-                  block
                   icon={<PlusOutlined />}
                 >
                   Ajouter
@@ -89,9 +92,12 @@ const AjoutTypeBAnc = () => {
             </>
           )}
         </Form.List>
+        <Button style={{ width: 750 }} type="primary">
+          Enregistrer
+        </Button>
       </Form>
     </div>
   );
 };
 
-export default AjoutTypeBAnc;
+export default AddUnit;

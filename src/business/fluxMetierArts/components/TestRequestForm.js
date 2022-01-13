@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
-import SeriesEssaisForm from './SeriesEssaisForm';
+import SeriesTestingForm from './SeriesTestingForm';
 import { BrowserRouter as Router, Switch, Link } from 'react-router-dom';
 import {
   Form,
@@ -12,6 +12,7 @@ import {
   Upload,
   Typography,
   Divider,
+  PageHeader,
 } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 
@@ -21,6 +22,21 @@ const layout = {
 };
 
 const { Title } = Typography;
+
+const routes = [
+  {
+    path: 'index',
+    breadcrumbName: 'Accueil',
+  },
+  {
+    path: 'EffectuerDemande',
+    breadcrumbName: 'Effectuer une demande',
+  },
+  {
+    path: 'DemandeVierge',
+    breadcrumbName: 'Demande vierge',
+  },
+];
 
 const props = {
   action: '//jsonplaceholder.typicode.com/posts/',
@@ -54,14 +70,19 @@ const fournisseurs = [
     */
 
 function TestRequestForm() {
-  const [showText, setShowText] = useState(false);
-  const onClick = () => setShowText(!showText);
+  const [showSeriesTestingComponent, setShowText] = useState(false);
+  const onClick = () => setShowText(!showSeriesTestingComponent);
   const onFinish = (values) => {
     console.log('Received values of form:', values);
   };
 
   return (
     <>
+      <PageHeader
+        className="site-page-header"
+        title="Creation d'une demande d'essai"
+        breadcrumb={{ routes }}
+      />
       <Form
         {...layout}
         id="form-demande-essai"
@@ -150,7 +171,10 @@ function TestRequestForm() {
           </Select>
         </Form.Item>
         <Form.Item className="label1" name="Designation" label="Designation">
-          <Select disabled={showText} rules={[{ required: true }]}>
+          <Select
+            disabled={showSeriesTestingComponent}
+            rules={[{ required: true }]}
+          >
             <Select.Option value="designation1">Designation 1</Select.Option>
           </Select>
         </Form.Item>
@@ -160,7 +184,7 @@ function TestRequestForm() {
           label="Reference ARTS"
           rules={[{ required: true }]}
         >
-          <Select disabled={showText}>
+          <Select disabled={showSeriesTestingComponent}>
             <Select.Option value="reference1">Reference 1</Select.Option>
           </Select>
         </Form.Item>
@@ -171,7 +195,7 @@ function TestRequestForm() {
         >
           <InputNumber
             style={{ width: 200 }}
-            disabled={showText}
+            disabled={showSeriesTestingComponent}
             rules={[{ required: true }]}
           />
         </Form.Item>
@@ -245,21 +269,27 @@ function TestRequestForm() {
             <Button icon={<UploadOutlined />}>Télécharger un fichier</Button>
           </Upload>
         </Form.Item>
-        {showText ? <SeriesEssaisForm /> : null}
-        <Button type="primary" danger>
-          <Link to="/MesDemandes">Annuler</Link>
-        </Button>
-        <Button className="boutonBasic">Aperçu</Button>
-        <Button className="boutonValider" type="primary" htmlType="submit">
-          Enregistrer
-        </Button>
-        <Button
-          className="boutonValiderDemandeEsaai"
-          type="primary"
-          htmlType="submit"
-        >
-          Enregistrer & envoyer
-        </Button>
+        {showSeriesTestingComponent ? <SeriesTestingForm /> : null}
+        <Form.Item className="alignButton">
+          <Button type="primary" danger>
+            <Link to="/PageTestRequests"> Annuler </Link>
+          </Button>
+        </Form.Item>
+        <Form.Item className="alignButton">
+          <Button>
+            <Link to=""> Aperçu </Link>
+          </Button>
+        </Form.Item>
+        <Form.Item className="alignButton">
+          <Button type="primary" htmlType="submit">
+            Enregistrer
+          </Button>
+        </Form.Item>
+        <Form.Item className="alignButton">
+          <Button type="primary" htmlType="submit">
+            Enregistrer & envoyer
+          </Button>
+        </Form.Item>
       </Form>
     </>
   );

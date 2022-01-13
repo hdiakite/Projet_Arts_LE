@@ -1,7 +1,15 @@
 import React from 'react';
-import { Form, Select, Table, Space, Tag, Divider, Button } from 'antd';
+import {
+  Form,
+  Select,
+  Table,
+  Space,
+  Tag,
+  Divider,
+  Button,
+  PageHeader,
+} from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-import CheminRechercheGlobale from '../components/CheminRechercheGlobale';
 import '../components/style.css';
 
 const { Option } = Select;
@@ -9,7 +17,18 @@ const { Column } = Table;
 
 const data = [];
 
-function RechercheGlobale() {
+const routes = [
+  {
+    path: 'index',
+    breadcrumbName: 'Accueil',
+  },
+  {
+    path: 'rechercheGlobale',
+    breadcrumbName: 'Recherche Globale',
+  },
+];
+
+function GlobalRearch() {
   const onFinish = (values: any) => {
     console.log('Finish:', values);
   };
@@ -17,7 +36,13 @@ function RechercheGlobale() {
   return (
     <div>
       <>
-        <CheminRechercheGlobale />
+        <div>
+          <PageHeader
+            className="site-page-header"
+            title="Recherche globale"
+            breadcrumb={{ routes }}
+          />
+        </div>
         {/* ------------------Formulaire recherche --------------------------------------------*/}
         <div className="dimansionRechercheGlobale">
           <Form
@@ -94,4 +119,4 @@ function RechercheGlobale() {
     </div>
   );
 }
-export default RechercheGlobale;
+export default GlobalRearch;

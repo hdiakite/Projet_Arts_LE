@@ -70,9 +70,6 @@ function ResultsTableSearch() {
     <div className="dimensionTableau">
       <Table columns={columns} dataSource={data} />
       <br />
-      <Button type="primary" danger>
-        <Link to="/MesDemandes">Annuler</Link>
-      </Button>
     </div>
   );
 }

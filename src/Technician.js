@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import './App.css';
 
 import HeaderLogo from './business/fluxMetierArts/components/HeaderLogo';
-import MesDemandes from './business/fluxMetierArts/pages/MesDemandes';
-import RechercheGlobale from './business/fluxMetierArts/pages/RechercheGlobale';
-import ProgramLancerEssai from './business/fluxMetierArts/pages/ProgramTechnicien/ProgramLancerEssai';
+import PageTestRequests from './business/fluxMetierArts/pages/PageTestRequests';
+import GlobalRearch from './business/fluxMetierArts/pages/GlobalRearch';
 import ProgramEssai from './business/fluxMetierArts/pages/ProgramTechnicien/Program/ProgramEssai';
 import ProgramEssaiEnCours from './business/fluxMetierArts/pages/ProgramTechnicien/ProgramEssaiEnCours';
+import ExistingRequestCopy from './business/fluxMetierArts/pages/PagesCreationRequest/ExistingRequestCopy';
+import VirginRequest from './business/fluxMetierArts/pages/PagesCreationRequest/VirginRequest';
 import { Menu } from 'antd';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
@@ -40,18 +41,29 @@ function App() {
             style={centerStyle}
           >
             <Menu.Item key="Demandes">
-              <Link to="/MesDemandes" style={{ color: 'white' }}>
+              <Link to="/PageTestRequests" style={{ color: 'white' }}>
                 Demandes essais{' '}
               </Link>
             </Menu.Item>
-            <Menu.Item key="demandeVierge">
-              <Link
-                to="/ProgramTechnicien/ProgramLancerEssai"
-                style={{ color: 'white' }}
+            <Menu.Item key="testRequest">
+              <SubMenu
+                className="nomMenu"
+                key="effectuerDemande"
+                title="effectuer une demande"
               >
-                {' '}
-                Je suis demandeur{' '}
-              </Link>
+                <Menu.ItemGroup title="">
+                  <Menu.Item key="copie">
+                    <Link to="/EffectuerDemande/EffectuerDemandeCopieDessai">
+                      {"Copie d'essai"}
+                    </Link>
+                  </Menu.Item>
+                  <Menu.Item key="Virgin">
+                    <Link to="/EffectuerDemande/EffectuerDemandeViergeFormulaire2">
+                      Demande vierge
+                    </Link>
+                  </Menu.Item>
+                </Menu.ItemGroup>
+              </SubMenu>
             </Menu.Item>
             <Menu.Item key="program">
               <Link
@@ -66,14 +78,6 @@ function App() {
                 Recherche globale
               </Link>
             </Menu.Item>
-            <Menu.Item key="recherche">
-              <Link
-                to="/ProgramTechnicien/ProgramEssaiEnCours"
-                style={{ color: 'white' }}
-              >
-                Essai en cours
-              </Link>
-            </Menu.Item>
           </Menu>
         </div>
         <Switch>
@@ -81,11 +85,15 @@ function App() {
             path="/ProgramTechnicien/Program/ProgramEssai"
             component={ProgramEssai}
           />
-          <Route path="/MesDemandes" component={MesDemandes} />
-          <Route path="/RechercheGlobale" component={RechercheGlobale} />
+          <Route path="/PageTestRequests" component={PageTestRequests} />
+          <Route path="/RechercheGlobale" component={GlobalRearch} />
           <Route
-            path="/ProgramTechnicien/ProgramLancerEssai"
-            component={ProgramLancerEssai}
+            path="/EffectuerDemande/EffectuerDemandeCopieDessai"
+            component={ExistingRequestCopy}
+          />
+          <Route
+            path="/EffectuerDemande/EffectuerDemandeViergeFormulaire2"
+            component={VirginRequest}
           />
           <Route
             path="/ProgramTechnicien/ProgramEssaiEnCours"

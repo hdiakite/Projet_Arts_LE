@@ -3,6 +3,7 @@ import './../stylePage.css';
 import SaisieDonneeDeMesure from './SaisieDonneeDeMesure';
 import { Typography, Button, Tag, Modal } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
+import { BrowserRouter as Link } from 'react-router-dom';
 
 const { Title } = Typography;
 const { confirm } = Modal;
@@ -30,7 +31,7 @@ const ProgramEssaiEnCours = () => {
         className="titreEtapeDemande"
         level={3}
       >
-        Mesure sur essai : 20-120
+        Mesure sur essai : 20-120 {/* a modofier affichage automatique */}
       </Title>
       <Tag
         style={{
@@ -45,7 +46,9 @@ const ProgramEssaiEnCours = () => {
       </Tag>
       <SaisieDonneeDeMesure />
       <br />
-      <Button className="ButtonAnuller">Annuler</Button>
+      <Button type="danger" className="ButtonAnuller">
+        <Link to="/PageTestRequests">Annuler</Link>
+      </Button>
       <Button className="ButtonEnregistrer">Enregitrer</Button>
       <Button className="ButtonTerminer" type="primary" onClick={showConfirm}>
         Terminer

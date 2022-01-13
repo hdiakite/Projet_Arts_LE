@@ -56,6 +56,12 @@ margin-top: 15px;
     color: white;
 
 }
+.alignButton 
+{
+    display:inline-block;
+    width:10%;
+    margin-left: 4%;
+}
 
 .allignerInput
 {
@@ -69,7 +75,7 @@ margin-top: 15px;
 
 .boutonBasic
 {
-    margin-left: 2%;
+    margin-left: 5%;
 }
 .boutonValider
 {
@@ -82,12 +88,7 @@ margin-top: 15px;
     margin-top: 1%;
 }
 
-/*-------------------------------------formulaire demande d'essai1--------------------------*/
-
-.formulaireDemande1
-{
-    margin-left: 2%;
-}
+/*-------------------------------------formulaire demande d'essai--------------------------*/
 
 .label1
 {
@@ -117,7 +118,7 @@ margin-top: 15px;
 
 .dimensionFormulaire
 {
-    width: 90%;
+    width: 80%;
     margin-left: 2%;
 }
 
@@ -372,7 +373,37 @@ margin-top: 15px;
 }
 
 /*------------------------------Sous menu ajout des élements en base de données--------------*/
-.menuAjoutEnBase
+.titreformulaireAjoutTechnologie
 {
 
 }
+.layoutContent
+{
+    width: 70%;
+    background-color: white;
+    margin-left: 100px;  
+}
+.layoutAdministration
+{
+    background-color: white;
+}
+
+.titrePriority1
+{
+    width: 230px;
+}
+.titrePriority1{
+margin-left: 0px;
+height: 30px;
+width: 230px;
+text-align:center;
+background-color:#dddedf ;
+}
+
+.titreUnit{
+    margin-left: 0px;
+    height: 30px;
+    width: 330px;
+    text-align:center;
+    background-color:#dddedf ;
+    }

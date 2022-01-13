@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './../../fluxMetierArts/components/style.css';
+import '../../components/style.css';
 import { Form, Input, Button, Typography, Space, Tag } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 
@@ -10,35 +10,35 @@ const layout = {
 
 const { Title } = Typography;
 
-const AjoutCategorie = () => {
+const AjoutTypeBAnc = () => {
   const onFinish = (values) => {
     console.log('Received values of form:', values);
   };
   const [countSerie, setCountSerie] = useState(1);
   const redStart = <em style={{ color: 'red' }}>* </em>;
-
   return (
     <div>
       <Form
         {...layout}
+        class="CompsantADroite"
         id="demande"
-        className="formulaireDemande1"
+        className=""
         name="dynamic_form_nest_item"
         onFinish={onFinish}
         autoComplete="off"
         layout="vertical"
       >
         <Title className="" level={4}>
-          Serie
+          New type banc
         </Title>
-        <div className="titreformulaireSerie">
+        <div className="titreformulaireAjoutTechnologie">
           <Tag className="titreSerie1"> #</Tag>
-          <Tag className="titreSerie2">{redStart} Nom</Tag>
-          <Tag className="titreSerie3">{redStart}Description</Tag>
+          <Tag className="titreNom">{redStart} Nom</Tag>
+          <Tag className="titreDescription">Description</Tag>
         </div>
         <br />
 
-        <Form.List name="series">
+        <Form.List name="typeBanc">
           {(fields, { add, remove }) => (
             <>
               {fields.map(({ key, name, fieldKey, ...restField }, id) => (
@@ -56,14 +56,14 @@ const AjoutCategorie = () => {
                     fieldKey={[fieldKey, 'nom']}
                     rules={[{ required: true, message: '' }]}
                   >
-                    <Input style={{ width: 330 }} placeholder="nom catégorie" />
+                    <Input style={{ width: 320 }} placeholder="nomtype banc" />
                   </Form.Item>
                   <Form.Item
                     {...restField}
                     name={[name, 'description']}
                     fieldKey={[fieldKey, 'description']}
                   >
-                    <Input style={{ width: 330 }} placeholder="" />
+                    <Input style={{ width: 320 }} placeholder="" />
                   </Form.Item>
                   <MinusCircleOutlined
                     onClick={function (event) {
@@ -75,12 +75,12 @@ const AjoutCategorie = () => {
               ))}
               <Form.Item>
                 <Button
+                  style={{ width: 700 }}
                   type="dashed"
                   onClick={function (event) {
                     add();
                     setCountSerie(countSerie + 1);
                   }}
-                  block
                   icon={<PlusOutlined />}
                 >
                   Ajouter
@@ -89,9 +89,12 @@ const AjoutCategorie = () => {
             </>
           )}
         </Form.List>
+        <Button style={{ width: 700 }} type="primary">
+          Enregistrer
+        </Button>
       </Form>
     </div>
   );
 };
 
-export default AjoutCategorie;
+export default AjoutTypeBAnc;

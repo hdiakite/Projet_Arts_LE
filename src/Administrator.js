@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import HeaderLogo from './business/fluxMetierArts/components/HeaderLogo';
-import AjoutBases from './business/fluxMetierArts/Administration/AjoutBases';
+import AdditionToBase from './business/fluxMetierArts/Administration/AdditionToBase';
 import MenuAdministration from './business/fluxMetierArts/Administration/MenuAdministration';
-import ModifierStatut from './business/fluxMetierArts/Administration/ModifierStatut';
-import AttribuerRole from './business/fluxMetierArts/Administration/AttribuerRole';
+import ModifieStatus from './business/fluxMetierArts/Administration/ModifieStatus';
+import AttributeRole from './business/fluxMetierArts/Administration/AttributeRole';
 
 function App() {
   return (
@@ -18,14 +18,17 @@ function App() {
           <MenuAdministration />
         </div>
         <Switch>
-          <Route path="/Administration/AjoutBase" component={AjoutBases} />
           <Route
-            path="/Administration/ModifierStatut"
-            component={ModifierStatut}
+            path="/Administration/AddionToBase"
+            component={AdditionToBase}
           />
           <Route
-            path="/Administration/AttribuerRole"
-            component={AttribuerRole}
+            path="/Administration/ModifieStatus"
+            component={ModifieStatus}
+          />
+          <Route
+            path="/Administration/AttributeRole"
+            component={AttributeRole}
           />
         </Switch>
       </Router>

@@ -9,8 +9,10 @@ import {
   Space,
   Select,
   Typography,
+  PageHeader,
 } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 const layout = {
   labelCol: { span: 30 },
@@ -20,6 +22,21 @@ const layout = {
 const { Title } = Typography;
 const { RangePicker } = DatePicker;
 
+const routes = [
+  {
+    path: 'index',
+    breadcrumbName: 'Accueil',
+  },
+  {
+    path: 'EffectuerDemande',
+    breadcrumbName: 'Effectuer une demande',
+  },
+  {
+    path: 'DemandeVierge',
+    breadcrumbName: "Copie d'essai",
+  },
+];
+
 function TestRequestSearchForm() {
   const onFinish = (values) => {
     console.log('Received values of form:', values);
@@ -27,6 +44,13 @@ function TestRequestSearchForm() {
 
   return (
     <>
+      <div>
+        <PageHeader
+          className="site-page-header"
+          title="Creation d'une demande d'essai"
+          breadcrumb={{ routes }}
+        />
+      </div>
       {/* ------------------------------Formulaire de cherche demande d'essai------------------------------------------------------------------*/}
       <Title className="titreEtapeDemande" level={3}>
         {"Copie d'une demande d'essai"}
@@ -100,6 +124,9 @@ function TestRequestSearchForm() {
           </Button>
         </Form.Item>
         <ResultsTableSearch />
+        <Button type="primary" danger>
+          <Link to="/PageTestRequests">Annuler</Link>
+        </Button>
       </Form>
     </>
   );

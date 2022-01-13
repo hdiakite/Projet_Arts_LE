@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './../../fluxMetierArts/components/style.css';
+import '../../components/style.css';
 import { Form, Input, Button, Typography, Space, Tag } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 
@@ -10,7 +10,7 @@ const layout = {
 
 const { Title } = Typography;
 
-const AjoutStatutEssai = () => {
+const AjoutPriorite = () => {
   const onFinish = (values) => {
     console.log('Received values of form:', values);
   };
@@ -29,16 +29,19 @@ const AjoutStatutEssai = () => {
         layout="vertical"
       >
         <Title className="" level={4}>
-          Serie
+          New priorité
         </Title>
-        <div className="titreformulaireSerie">
+        <div className="titreformulaireAjoutTechnologie">
           <Tag className="titreSerie1"> #</Tag>
-          <Tag className="titreSerie2">{redStart} Nom</Tag>
-          <Tag className="titreSerie3">{redStart}Description</Tag>
+          <Tag className="titrePriority1">{redStart} Nom</Tag>
+          <Tag className="titrePriority1">
+            {redStart} delai max de lancement
+          </Tag>
+          <Tag className="titrePriority1">Description</Tag>
         </div>
         <br />
 
-        <Form.List name="series">
+        <Form.List name="priority">
           {(fields, { add, remove }) => (
             <>
               {fields.map(({ key, name, fieldKey, ...restField }, id) => (
@@ -56,14 +59,21 @@ const AjoutStatutEssai = () => {
                     fieldKey={[fieldKey, 'nom']}
                     rules={[{ required: true, message: '' }]}
                   >
-                    <Input style={{ width: 330 }} placeholder="nom statut" />
+                    <Input style={{ width: 230 }} placeholder="nom type banc" />
+                  </Form.Item>
+                  <Form.Item
+                    {...restField}
+                    name={[name, 'delai']}
+                    fieldKey={[fieldKey, 'delai']}
+                  >
+                    <Input style={{ width: 240 }} placeholder="" />
                   </Form.Item>
                   <Form.Item
                     {...restField}
                     name={[name, 'description']}
                     fieldKey={[fieldKey, 'description']}
                   >
-                    <Input style={{ width: 330 }} placeholder="" />
+                    <Input style={{ width: 240 }} placeholder="" />
                   </Form.Item>
                   <MinusCircleOutlined
                     onClick={function (event) {
@@ -75,12 +85,12 @@ const AjoutStatutEssai = () => {
               ))}
               <Form.Item>
                 <Button
+                  style={{ width: 750 }}
                   type="dashed"
                   onClick={function (event) {
                     add();
                     setCountSerie(countSerie + 1);
                   }}
-                  block
                   icon={<PlusOutlined />}
                 >
                   Ajouter
@@ -89,9 +99,12 @@ const AjoutStatutEssai = () => {
             </>
           )}
         </Form.List>
+        <Button style={{ width: 750 }} type="primary">
+          Enregistrer
+        </Button>
       </Form>
     </div>
   );
 };
 
-export default AjoutStatutEssai;
+export default AjoutPriorite;

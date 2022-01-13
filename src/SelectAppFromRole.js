@@ -1,19 +1,19 @@
 import React from 'react';
 import { useAppContext } from './AppProvider';
-import AppDemandeur from './AppCopieDemandeur';
-import AppResponsable from './AppCopieResponsable';
-import AppTechnicien from './AppCopieTechnicien';
-import AppAdministration from './AppCopieAdministration';
+import Applicant from './Applicant';
+import Responsible from './Responsible';
+import Technician from './Technician';
+import Administrator from './Administrator';
 
 const SelectAppFromRole = () => {
   const { role } = useAppContext();
 
   return (
     <>
-      {role === 'demandeur' && <AppDemandeur />}
-      {role === 'administrateur' && <AppAdministration />}
-      {role === 'technicien' && <AppTechnicien />}
-      {role === 'responsable' && <AppResponsable />}
+      {role === 'demandeur' && <Applicant />}
+      {role === 'administrateur' && <Administrator />}
+      {role === 'technicien' && <Technician />}
+      {role === 'responsable' && <Responsible />}
       {!role && <span>Role not found</span>}
     </>
   );

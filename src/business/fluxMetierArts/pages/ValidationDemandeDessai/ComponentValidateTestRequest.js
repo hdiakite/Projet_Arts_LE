@@ -4,7 +4,7 @@ import '../../components/style.css';
 
 const { Text } = Typography;
 
-const ComposantValiderDemandeEssai = () => {
+const ComponentValidateTestRequest = () => {
   return (
     <div className="validerdemandeEssai">
       <div className="ContenuDiv">
@@ -47,4 +47,4 @@ const ComposantValiderDemandeEssai = () => {
   );
 };
 
-export default ComposantValiderDemandeEssai;
+export default ComponentValidateTestRequest;

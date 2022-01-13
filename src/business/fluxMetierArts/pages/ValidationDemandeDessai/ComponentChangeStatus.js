@@ -1,10 +1,10 @@
 import React from 'react';
-import { Form, Button, Input, Typography, Divider, Select } from 'antd';
+import { Form, Button, Typography, Divider, Select } from 'antd';
 import '../../components/style.css';
 
 const { Text } = Typography;
 
-const ComposantModifierStatut = () => {
+const ComponentChangeStatus = () => {
   return (
     <>
       <div className="validerdemandeEssai">
@@ -36,4 +36,4 @@ const ComposantModifierStatut = () => {
   );
 };
 
-export default ComposantModifierStatut;
+export default ComponentChangeStatus;

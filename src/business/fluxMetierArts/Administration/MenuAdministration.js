@@ -28,18 +28,18 @@ const MenuAdministration = (props) => {
         mode="horizontal"
         style={centerStyle}
       >
-        <Menu.Item key="AjoutBase">
-          <Link to="/Administration/AjoutBase" style={{ color: 'white' }}>
+        <Menu.Item key="AdditionToBase">
+          <Link to="/Administration/AddionToBase" style={{ color: 'white' }}>
             Ajout en base{' '}
           </Link>
         </Menu.Item>
         <Menu.Item key="modifierStatut">
-          <Link to="/Administration/ModifierStatut" style={{ color: 'white' }}>
+          <Link to="/Administration/ModifieStatus" style={{ color: 'white' }}>
             Modifier le Statut{' '}
           </Link>
         </Menu.Item>
         <Menu.Item key="attribuerRole">
-          <Link to="/Administration/AttribuerRole" style={{ color: 'white' }}>
+          <Link to="/Administration/AttributeRole" style={{ color: 'white' }}>
             Attribuer un role{' '}
           </Link>
         </Menu.Item>
